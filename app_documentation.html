@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apresentação: Documentação do app.py</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #131A2B 0%, #1F2A44 100%);
+      color: #f8fafc;
+    }
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px;
+    }
+    .slide {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      padding: 36px;
+      margin-bottom: 28px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+    }
+    h1, h2, h3, h4 {
+      margin-top: 0;
+      color: #e2e8f0;
+    }
+    h1 {
+      font-size: 3rem;
+      letter-spacing: -0.05em;
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    h3 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+    h4 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      color: #cbd5e1;
+    }
+    ul {
+      padding-left: 1.4rem;
+      margin: 0 0 20px 0;
+      color: #e2e8f0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    code {
+      background: rgba(148, 163, 184, 0.16);
+      color: #f8fafc;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.96rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.18);
+      color: #bae6fd;
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .note {
+      border-left: 4px solid #38bdf8;
+      padding-left: 16px;
+      margin: 20px 0;
+      color: #cbd5e1;
+    }
+    .footer {
+      text-align: center;
+      color: #94a3b8;
+      margin-top: 16px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <section class="slide">
+      <span class="badge">Slide 1</span>
+      <h1>Documentação do <code>app.py</code></h1>
+      <p>Apresentação rápida do dashboard comercial criado com Streamlit, mostrando fluxo de dados, filtros, KPIs e visualizações.</p>
+      <div class="grid">
+        <div>
+          <h3>Propósito</h3>
+          <p>Permitir análise estratégica de vendas dos últimos 2 anos com informações por período, região, cliente e produto.</p>
+        </div>
+        <div>
+          <h3>Público</h3>
+          <p>Gestores de vendas, analistas comerciais e time de BI que precisam acompanhar performance e identificar oportunidades.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <span class="badge">Slide 2</span>
+      <h2>Principais dependências</h2>
+      <ul>
+        <li><code>streamlit</code> — interface web interativa.</li>
+        <li><code>pandas</code> — manipulação de dados e leitura de planilhas.</li>
+        <li><code>plotly.express</code> — gráficos interativos.</li>
+        <li><code>datetime</code> — tratamento de datas.</li>
+      </ul>
+      <div class="note">Essas bibliotecas são usadas para criar uma aplicação responsiva, com carregamento rápido e visualizações fáceis de explorar.</div>
+    </section>
+
+    <section class="slide">
+      <span class="badge">Slide 3</span>
+      <h2>Fluxo do aplicativo</h2>
+      <ol>
+        <li>Configura a página e o título do dashboard.</li>
+        <li>Carrega as planilhas de <code>Pedidos</code> e <code>Produtos</code>.</li>
+        <li>Trata datas e faz merge de categoria/gramatura quando necessário.</li>
+        <li>Aplica filtros escolhidos pelo usuário.</li>
+        <li>Exibe KPIs e gráficos nas abas principais.</li>
+      </ol>
+      <div class="note">O fluxo é simples e direto, pensado para proporcionar uma apresentação clara dos resultados comerciais.</div>
+    </section>
+
+    <section class="slide">
+      <span class="badge">Slide 4</span>
+      <h2>Filtros disponíveis</h2>
+      <div class="grid">
+        <div>
+          <h3>Período</h3>
+          <p>Seleciona intervalo de datas entre o menor e maior pedido da base.</p>
+        </div>
+        <div>
+          <h3>Região</h3>
+          <p>Filtra por região da loja para comparar desempenho geográfico.</p>
+        </div>
+        <div>
+          <h3>Categoria</h3>
+          <p>Permite escolher apenas as categorias de produtos relevantes.</p>
+        </div>
+        <div>
+          <h3>Produto</h3>
+          <p>Lista dinâmica baseada nas categorias selecionadas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <span class="badge">Slide 5</span>
+      <h2>Métricas (KPIs)</h2>
+      <ul>
+        <li><strong>Faturamento Total</strong> — soma de <code>Valor Total Pedido</code>.</li>
+        <li><strong>Total de Vendas</strong> — total de linhas filtradas.</li>
+        <li><strong>Volume de Itens</strong> — soma de caixas e unidades.</li>
+      </ul>
+      <div class="note">Os KPIs são apresentados em destaque para facilitar a tomada de decisão rápida.</div>
+    </section>
+
+    <section class="slide">
+      <span class="badge">Slide 6</span>
+      <h2>Visões do Dashboard</h2>
+      <h3>Aba 1: Evolução &amp; Regiões</h3>
+      <ul>
+        <li>Faturamento mensal ao longo do tempo.</li>
+        <li>Distribuição do faturamento por região.</li>
+      </ul>
+      <h3>Aba 2: Análise de Clientes</h3>
+      <ul>
+        <li>Top 10 clientes por faturamento.</li>
+        <li>Clientes inativos há mais de 90 dias.</li>
+      </ul>
+      <h3>Aba 3: Análise de Produtos</h3>
+      <ul>
+        <li>Faturamento por categoria.</li>
+        <li>Preferência entre caixas fechadas e unidades avulsas.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <span class="badge">Slide 7</span>
+      <h2>Tratamento de dados e erros</h2>
+      <p>O app carrega o Excel e converte a coluna <code>Data Pedido</code> para data. Se houver falha no carregamento, exibe erro e interrompe a execução.</p>
+      <p>Quando nenhum resultado é encontrado após os filtros, o dashboard mostra avisos claros para o usuário.</p>
+    </section>
+
+    <section class="slide">
+      <span class="badge">Slide 8</span>
+      <h2>Observações finais</h2>
+      <ul>
+        <li>Depende do arquivo <code>Base_Laticinios_Ficticia_V2.xlsx</code>.</li>
+        <li>Os gráficos usam chaves únicas para evitar conflito no Streamlit.</li>
+        <li>Os valores são formatados para o padrão brasileiro de moeda e números.</li>
+      </ul>
+      <p>Esse formato entrega uma visão clara e objetiva para apresentação do projeto a stakeholders ou ao time.</p>
+    </section>
+
+    <section class="slide">
+      <span class="badge">Slide 9</span>
+      <h2>Resumo</h2>
+      <p>O <code>app.py</code> é um dashboard comercial completo com filtros interativos, indicadores de desempenho, análise por cliente e produtos, além de filtros de período e região.</p>
+      <p>Ideal para apresentações rápidas em reuniões de resultados e planejamento comercial.</p>
+    </section>
+
+    <div class="footer">Documento gerado para apresentação do dashboard comercial</div>
+  </div>
+</body>
+</html>
