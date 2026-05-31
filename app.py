@@ -5,7 +5,7 @@ from datetime import datetime
 
 # 1. CONFIGURAÇÃO DA PÁGINA WEB
 st.set_page_config(page_title="Dashboard Comercial", layout="wide")
-st.title("📊 Dashboard de Performance Comercial")
+st.title("📊 Dashboard - Performance Comercial")
 st.markdown("Análise estratégica de vendas dos últimos 2 anos")
 
 # 2. CARREGAMENTO E TRATAMENTO DOS DADOS
